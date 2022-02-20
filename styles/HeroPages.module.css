@@ -1,0 +1,28 @@
+.titles {
+  display: flex !important;
+  justify-content: flex-start !important;
+  flex-direction: column !important;
+  margin-top: -150px !important;
+  z-index: 1 !important;
+  height: 125px !important;
+  width: 80% !important;
+}
+.title {
+  height: 60px !important;
+  z-index: 1 !important;
+}
+.subtitle {
+  height: 20px !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  font-weight: normal !important;
+  color: #fff !important;
+  z-index: 1 !important;
+}
+.breadCrumbWrap {
+  margin-top: 0px !important;
+  width: 80% !important;
+  z-index: 2 !important;
+}

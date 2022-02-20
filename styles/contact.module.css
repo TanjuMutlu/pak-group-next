@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: 100px 0 100px 0;
+  height: 100%;
+  width: 100%;
+}
+.childContainer {
+  margin: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+}
+.formWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px 0 30px 0;
+  height: 90%;
+  width: 100%;
+}
+.numbers {
+  margin: 10px 0 10px 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+.numbersName {
+  margin: 0px 10px 0px 10px !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+.numbersNumber {
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: 0 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+.textAdress {
+  margin: 10px 0 10px 0 !important;
+  max-width: 400px !important;
+  font-family: Fira Sans !important ;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+.submitButton {
+  border-radius: 0px 24px 24px 24px !important;
+  margin-top: 5px !important;
+  width: 125px !important;
+  height: 48px !important;
+}

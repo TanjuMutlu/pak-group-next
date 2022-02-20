@@ -1,0 +1,140 @@
+.brandContentContainer {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  width: 80% !important;
+  margin: auto !important;
+  margin-top: 100px !important;
+}
+.descriptionAndBody {
+  width: 70% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+}
+.logoAndContacts {
+  width: 375px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.contacts {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+}
+.contactItem {
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 10px !important;
+}
+.contactLink {
+  text-decoration: underline !important;
+  color: #dc002e !important;
+  cursor: pointer !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+.contactName {
+  margin-right: 5px !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  color: #000000 !important;
+}
+.bodyBox {
+  display: flex !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+}
+.description {
+  width: 95% !important;
+  padding-bottom: 100px !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 24px !important;
+  line-height: 140% !important;
+  color: #000000 !important;
+}
+.title {
+  margin: 20px !important;
+  width: 80% !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 36px !important;
+  line-height: 43px !important;
+  color: #000000 !important;
+}
+.body {
+  margin: 20px !important;
+  width: 80% !important;
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 150% !important;
+  color: #000000 !important;
+}
+.navButtons {
+  height: 144px !important;
+  width: 95% !important;
+  margin: auto !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  display: flex !important;
+}
+.buttonText:hover {
+  color: #fff !important;
+}
+.buttonL {
+  border: 1px solid #dc002e !important;
+  box-sizing: border-box !important;
+  border-radius: 24px 0px 24px 24px !important;
+  transition: 0.2s !important;
+}
+.buttonL:hover {
+  background-color: #dc002e !important;
+  text-decoration: #fff !important;
+}
+.buttonR {
+  border: 1px solid #dc002e !important;
+  box-sizing: border-box !important;
+  border-radius: 0px 24px 24px 24px !important;
+  transition: 0.2s !important;
+}
+.buttonR:hover {
+  background-color: #dc002e !important;
+  text-decoration: #fff !important;
+}
+.sectorButtonsContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  height: 407px !important;
+  width: 100% !important;
+  background: #f8f8f8 !important;
+}
+.sectorButtonsTitle {
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 36px !important;
+  line-height: 43px !important;
+  text-align: center !important;
+  color: #000000 !important;
+}
+.sectorButtonsRedLine {
+  margin: 30px !important;
+  width: 100px !important;
+  height: 4px !important;
+  background: #dc002e !important;
+}

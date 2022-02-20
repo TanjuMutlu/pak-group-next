@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin: auto;
+}
+.tabBox {
+  padding: 100px 0 100px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.tab {
+  width: 130px !important;
+}
+.tabTitle {
+  font-family: Fira Sans !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+}
+.tabPanelTitle {
+  font-family: Fira Sans;
+  font-style: normal;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 50px;
+  color: #000;
+}
+.tabPanelTitle:hover {
+  color: #dc002e;
+  transition: 0.3s;
+}
+
+.tabPanelWrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.tabPanelLink {
+  margin: 0 15px 0 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  width: 480px;
+  height: 70px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tabPanelLink:hover {
+  background: rgb(244, 244, 244);
+  transition: 0.3s;
+}

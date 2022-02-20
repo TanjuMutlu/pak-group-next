@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  max-width: 1700px;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+  z-index: 0;
+}
+.child {
+  position: absolute;
+  max-width: 1300px;
+  top: 25%;
+  display: flex;
+  width: 85%;
+  height: fit-content;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 2;
+}
+.heroSlideImgGradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5)
+  );
+  z-index: 1;
+}
+.swiperWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  z-index: -1;
+  margin: 0;
+}
+.title {
+  width: 700px;
+  height: 192px;
+}
+.infoButton {
+  margin-top: 32px !important;
+  width: 162px !important;
+  height: 48px !important;
+  border-radius: 0px 24px 24px 24px !important;
+  background-color: #dc002e !important;
+  color: #fff !important;
+}
+.infoButton:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    #dc002e;
+  color: #fff;
+}
+.cardBox {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  margin-top: -13vh;
+  flex-direction: row;
+}
