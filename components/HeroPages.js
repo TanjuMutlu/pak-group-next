@@ -1,5 +1,5 @@
 import styles from "styles/HeroPages.module.css";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import BreadCrumb from "base/BreadCrumb";
@@ -12,6 +12,7 @@ export default function HeroPages({
   breadBrand,
   breadSector,
 }) {
+  const matches = useMediaQuery("(min-width:900px)");
   return (
     <>
       <Box
@@ -25,7 +26,15 @@ export default function HeroPages({
           margin: "auto",
         }}
       >
-          <Image src={background} height={1000} width={3000} alt="background" />
+        <div
+          style={{
+            position: "relative",
+            height: matches ? "600px" : "400px",
+            width: "2000px",
+          }}
+        >
+          <Image src={background} layout="fill" alt="background" />
+        </div>
         <Box className={styles.titles}>
           <Typography className={styles.subtitle}>{subtitle}</Typography>
           <Typography variant="subtitle1" className={styles.title}>

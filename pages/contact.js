@@ -10,8 +10,7 @@ import labels from "includes/contact/labels";
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "42%",
-    margin: "10px !important",
+    width: "100%",
     "& .MuiFilledInput-root": {
       background: "#fff !important",
     },
@@ -33,7 +32,7 @@ export default function Contact() {
       />
       <Box className={styles.container}>
         <Box className={styles.childContainer}>
-          <Typography color="#000" variant="subtitle1">
+          <Typography color="#000" variant="subtitle1" className={styles.title}>
             Merkez Büro
           </Typography>
           <Typography className={styles.textAdress}>
@@ -58,7 +57,7 @@ export default function Contact() {
         >
           <Box className={styles.formWrap}>
             {labels.map((item, index) => (
-              <>
+              <div key={index} className={styles.formItem}>
                 {item == "Endustri" ? (
                   <TextField
                     className={classes.root}
@@ -76,17 +75,16 @@ export default function Contact() {
                   </TextField>
                 ) : (
                   <TextField
-                    key={index}
                     className={classes.root}
                     label={item}
                     variant="filled"
                   />
                 )}
-              </>
+              </div>
             ))}
             <TextField
               className={classes.root}
-              sx={{ width: "88%" }}
+              style={{ width: "95%", maxWidth: "500px", margin: "10px" }}
               multiline
               rows={4}
               label="Mesaj"

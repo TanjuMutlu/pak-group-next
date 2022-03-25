@@ -6,7 +6,6 @@ import { Typography, Tab, Tabs, Box } from "@mui/material";
 import Link from "next/link";
 import tabPanelItems from "includes/BrandsData";
 import TabPanel from "base/TabPanel";
-import TabLinkItem from "base/TabLinkItem";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 
 export default function Brands() {
@@ -24,6 +23,9 @@ export default function Brands() {
         />
         <Box className={styles.tabBox}>
           <Tabs
+            variant="scrollable"
+            scrollButtons
+            allowScrollButtonsMobile
             value={value}
             onChange={handleChange}
             textColor="primary"
@@ -36,11 +38,17 @@ export default function Brands() {
                 value={index}
                 label={
                   item == "TUMU" ? (
-                    <Typography className={styles.tabTitle} color="primary">
+                    <Typography
+                      component={"span"}
+                      className={styles.tabTitle}
+                      color="primary"
+                    >
                       {item}
                     </Typography>
                   ) : (
-                    <Typography className={styles.tabTitle}>{item}</Typography>
+                    <Typography component={"span"} className={styles.tabTitle}>
+                      {item}
+                    </Typography>
                   )
                 }
               />
@@ -51,14 +59,17 @@ export default function Brands() {
           <TabPanel value={value} index={0}>
             <Box className={styles.tabPanelWrap}>
               {tabPanelItems.map((item, index) => (
-                <Link href={item.link} passHref={true} key={index}>
+                <Link href={item.link} passHref key={index}>
                   <div className={styles.tabPanelLink}>
                     <ArrowForwardIosOutlinedIcon
                       sx={{ margin: "5px" }}
                       color="primary"
                       fontSize="m"
                     />
-                    <Typography className={styles.tabPanelTitle}>
+                    <Typography
+                      component={"span"}
+                      className={styles.tabPanelTitle}
+                    >
                       {item.title}
                     </Typography>
                   </div>
@@ -70,12 +81,26 @@ export default function Brands() {
           {categories.map((category, index) => (
             <TabPanel value={value} index={index} key={index}>
               <Box className={styles.tabPanelWrap}>
-                {tabPanelItems.map((item) => (
-                  <>
+                {tabPanelItems.map((item, i) => (
+                  <div key={i}>
                     {item.category == `${category}` ? (
-                      <TabLinkItem title={item.title} link={item.link} />
+                      <Link href={item.link} passHref key={index}>
+                        <div className={styles.tabPanelLink}>
+                          <ArrowForwardIosOutlinedIcon
+                            sx={{ margin: "5px" }}
+                            color="primary"
+                            fontSize="m"
+                          />
+                          <Typography
+                            component={"span"}
+                            className={styles.tabPanelTitle}
+                          >
+                            {item.title}
+                          </Typography>
+                        </div>
+                      </Link>
                     ) : null}
-                  </>
+                  </div>
                 ))}
               </Box>
             </TabPanel>

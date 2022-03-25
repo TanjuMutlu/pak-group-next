@@ -5,11 +5,17 @@ import HeroPages from "components/HeroPages";
 import background from "public/backgrounds/about-page.jpg";
 import SectionHome from "components/home/Section";
 import Timeline from "base/Timeline";
+import createBreakpoints from "@mui/system/createTheme/createBreakpoints";
+const breakpoints = createBreakpoints({});
 
 const useStyles = makeStyles({
   bodyWrap: {
-    width: "60%",
-    padding: "100px 0 0 0",
+    maxWidth: "800px",
+    padding: "60px 0 0 0",
+    margin: "30px",
+    [breakpoints.down("sm")]: {
+      padding: "20px 0 0 0",
+    },
   },
   section: { width: "100%", paddingTop: "50px" },
 });

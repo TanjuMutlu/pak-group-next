@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material/styles";
+import createBreakpoints from "@mui/system/createTheme/createBreakpoints";
+const breakpoints = createBreakpoints({});
 
 let theme = createTheme({
   palette: {
@@ -14,6 +16,12 @@ let theme = createTheme({
       fontSize: "50px",
       lineHeight: " 60px",
       color: "#FFFFFF",
+      [breakpoints.down("md")]: {
+        fontWeight: 500,
+        maxWidth: "300px",
+        fontSize: "40px",
+        lineHeight: "80px",
+      },
     },
     subtitle2: {
       fontFamily: "Fira Sans",
@@ -33,13 +41,23 @@ let theme = createTheme({
     },
     h6: {
       maxWidth: "1700px",
-      minWidth: "500px",
       fontFamily: "Fira Sans",
       fontStyle: "normal",
       fontWeight: 500,
       fontSize: "40px",
       lineHeight: "48px",
       color: "#FFFFFF",
+      [breakpoints.down("lg")]: {
+        fontWeight: 500,
+        fontSize: "35px",
+        lineHeight: "40px",
+      },
+      [breakpoints.down("md")]: {
+        fontWeight: 500,
+        maxWidth: "300px",
+        fontSize: "25px",
+        lineHeight: "30px",
+      },
     },
     h5: {
       fontFamily: "Fira Sans",
@@ -56,6 +74,11 @@ let theme = createTheme({
       lineHeight: "22px",
       letterSpacing: "0.05em",
       color: "#000000",
+      [breakpoints.down("md")]: {
+        fontWeight: 500,
+        fontSize: "18px",
+        lineHeight: "16px",
+      },
     },
     h3: {
       fontFamily: "Fira Sans",
@@ -65,6 +88,9 @@ let theme = createTheme({
       lineHeight: "43px",
       color: "#000000",
       textAlign: "center",
+      [breakpoints.down("sm")]: {
+        fontSize: "26px",
+      },
     },
     h1: {
       fontFamily: "Fira Sans",
@@ -76,6 +102,13 @@ let theme = createTheme({
       textDecoration: "underline",
       cursor: "pointer",
     },
+  },
+  shadows: {
+    0: "none",
+    1: "none",
+    8: "none",
+    [false]: "none",
+    24: "none",
   },
 });
 

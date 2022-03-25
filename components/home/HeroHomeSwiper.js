@@ -7,11 +7,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import SwiperCore, { EffectFade, Autoplay } from "swiper";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import carauselItems from "includes/home/ImgCarauselItems";
 SwiperCore.use([EffectFade, Autoplay]);
 
 export default function HeroHomeSwiper() {
+  const matches = useMediaQuery("(min-width:900px)");
   return (
     <Box width="100%">
       <Swiper
@@ -24,18 +25,25 @@ export default function HeroHomeSwiper() {
           disableOnInteraction: false,
         }}
       >
-        {carauselItems.map((item) => (
-          <SwiperSlide key="slide">
-            <div className={styles.heroSlideImgGradient} key="1" />
-            <Image
-              src={item}
-              alt={`${item}`}
-              key={`${item}`}
-              width="100%"
-              height="50%"
-              layout="responsive"
-              objectFit="contain"
-            />
+        {carauselItems.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className={styles.heroSlideImgGradient} />
+            {matches ? (
+              <Image
+                src={item}
+                alt={`${item}`}
+                width="100%"
+                height="50%"
+                layout="responsive"
+                objectFit="contain"
+              />
+            ) : (
+              <div
+                style={{ position: "relative", height: "700px", width: "2000px" }}
+              >
+                <Image src={item} alt={`${item}`} layout="fill" />
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

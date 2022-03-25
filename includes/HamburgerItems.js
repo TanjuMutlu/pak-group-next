@@ -1,8 +1,8 @@
-const NavItems = [
+const hamburgerItems = [
   { title: "HAKKIMIZDA", link: "/about" },
-  { title: "sectors", link: "/brands" },
+  { title: null, link: "" },
   { title: "ŞİRKETLERİMİZ", link: "/brands" },
   { title: "İLETİŞİM", link: "/contact" },
-  { title: "tr", link: "/brands" },
+  { title: null, link: "" },
 ];
-export default NavItems;
+export default hamburgerItems;

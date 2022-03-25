@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 2000px;
   background: #f8f8f8;
 }
 .timlelineItemBox {
@@ -17,12 +17,18 @@
 }
 .line {
   height: 1900px;
-  width: 4px;
+  width: 3px;
   background-color: #dc002e;
   position: absolute;
 }
 .img {
   margin: 30px;
+}
+.imgMobile {
+  position: relative;
+  max-width: 750px;
+  max-height: 400px;
+  margin: 40px;
 }
 .bodyBox {
   display: flex;
@@ -45,4 +51,51 @@
   font-size: 14px;
   line-height: 22px;
   color: #000000;
+}
+.timlelineItemMobile {
+  display: flex;
+  margin-top: 40px;
+  margin-left: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+.lineMobile {
+  height: 620px;
+  width: 3px;
+  border: 2px solid #dc002e;
+  position: relative;
+  margin-left: 20px;
+  z-index: 0;
+}
+@media only screen and (max-width: 600px) {
+  .timeline {
+    margin-top: 120px;
+  }
+} 
+@media only screen and (max-width: 800px) {
+  .line {
+    height: 3500px;
+    width: 3px;
+    background-color: #dc002e;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 40px;
+    position: absolute;
+    z-index: 0;
+  }
+  .timeline {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+    flex-wrap: wrap;
+  }
+  .bodyBox {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    width: 85%;
+  }
 }

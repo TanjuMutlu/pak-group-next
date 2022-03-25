@@ -19,10 +19,13 @@ export default function SectorPageContent({
       <Box className={styles.container}>
         <Box className={styles.titleContainer}>
           <Image src={sectorIcon} alt="sectorIcon" />
-          <Typography variant="h3" sx={{ maxWidth: "900px" }}>
+          <Typography
+            variant="h3"
+            sx={{ maxWidth: "900px", marginLeft: "10px", marginRight: "10px" }}
+          >
             {title}
           </Typography>
-          <div className={styles.sectorButtonsRedline} />
+          <div className={styles.titleRedline} />
         </Box>
 
         <Box className={styles.imgBox}>
@@ -37,17 +40,19 @@ export default function SectorPageContent({
           <Typography variant="h3" sx={{ margin: "50px 0 0 0" }}>
             {sectorName} Marka ve Şirketleri
           </Typography>
-          <div className={styles.sectorButtonsRedline} />
+          <div className={styles.titleRedline} />
           {sectorCompanies.map((item, index) => (
             <Box className={styles.companyCard} key={index}>
               <Box className={styles.companyCardTexts}>
                 <Typography variant="subtitle2">{item.title}</Typography>
                 <Typography variant="body1">{item.body} </Typography>
-                <Link href={item.link} passHref={true}>
+                <Link href={item.link} passHref>
                   <Typography variant="h1">Detayli Bilgi</Typography>
                 </Link>
               </Box>
-              <Image src={item.img} width={240} height={160} alt="sectorImg" />
+              <div className={styles.imgWrap}>
+                <Image src={item.img} layout="fill" alt="sectorImg" />
+              </div>
             </Box>
           ))}
           <div style={{ height: "50px" }} />

@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <Box className={styles.footerContainer}>
       <Box>
-        <Typography sx={{ fontSize: "14px" }}>
+        <Typography color="gray" sx={{ fontSize: "14px", margin: "10px" }}>
           © 2021 Pak Holding. Tüm hakları saklıdır.
         </Typography>
       </Box>
@@ -16,8 +16,8 @@ export default function Footer() {
       <Box className={styles.footerLinksContainer}>
         {linkTitles.map((item, index) => {
           return (
-            <Link href={item.link} passHref={true} key={index}>
-              <Typography className={styles.footerLink}>
+            <Link href={item.link} passHref key={index}>
+              <Typography className={styles.footerLink} color="gray">
                 {item.title}
               </Typography>
             </Link>

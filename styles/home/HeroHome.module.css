@@ -42,6 +42,7 @@
   z-index: -1;
   margin: 0;
 }
+
 .title {
   width: 700px;
   height: 192px;
@@ -66,4 +67,16 @@
   position: relative;
   margin-top: -13vh;
   flex-direction: row;
+}
+@media only screen and (max-width: 1200px) {
+  .title {
+    width: 600px;
+    height: 160px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .title {
+    margin-top: 20px;
+    height: 160px;
+  }
 }

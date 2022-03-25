@@ -23,6 +23,54 @@
 }
 .breadCrumbWrap {
   margin-top: 0px !important;
-  width: 80% !important;
+  width: 100% !important;
+  display: "flex";
+  justify-content: center;
   z-index: 2 !important;
+}
+@media only screen and (max-width: 900px) {
+  .breadCrumbWrap {
+    margin-top: 0px !important;
+    display: "flex";
+    justify-content: flex-start;
+    width: 100% !important;
+    z-index: 2 !important;
+  }
+  .titles {
+    display: flex !important;
+    justify-content: flex-start !important;
+    flex-direction: column !important;
+    margin-top: -150px !important;
+    z-index: 1 !important;
+    height: 125px !important;
+    width: 80% !important;
+  }
+  .subtitle {
+    height: 20px !important;
+    font-family: Fira Sans !important;
+    font-style: normal !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    font-weight: normal !important;
+    color: #fff !important;
+    z-index: 1 !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title {
+    font-family: "Fira Sans" !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 32px !important;
+    line-height: 38px !important;
+  }
+  .titles {
+    display: flex !important;
+    justify-content: flex-end !important;
+    flex-direction: column !important;
+    margin-top: -150px !important;
+    z-index: 1 !important;
+    height: 125px !important;
+    width: 95% !important;
+  }
 }

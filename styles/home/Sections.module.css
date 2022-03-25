@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   height: 600px;
+  margin-top: 40px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -13,11 +14,23 @@
   justify-content: center;
   align-items: center;
 }
+.imagesWrap {
+  display: flex;
+  width: 1300px;
+  height: 550px;
+  margin: auto;
+  justify-content: flex-start;
+}
+.videoButtonWrap {
+  display: flex;
+  width: 100% !important;
+  min-width: 850px;
+}
 .playVideoButton {
-  margin-left: 25% !important;
+  top: 50px;
   transition: 0.3s !important;
-  width: 70% !important;
-  height: 70% !important;
+  width: 100% !important;
+  height: 400px !important;
 }
 .playVideoButton:hover {
   opacity: 0.9;
@@ -27,17 +40,10 @@
   height: 100%;
   width: 100%;
 }
-.infosImg {
-  width: 448px;
-  height: 520px;
-  position: absolute;
-  z-index: 0;
-  margin-left: 6%;
-}
 .swiper {
   margin-top: 30px;
   width: 70%;
-  height: 180px;
+  height: 200px;
 }
 .titleBox {
   display: flex;
@@ -54,7 +60,164 @@
 }
 .redLine {
   margin-top: 5%;
+  z-index: 2;
   width: 100px;
+  background: #dc002e;
   height: 4px;
-  background-color: #dc002e;
+}
+.paralellogramWrap {
+  display: flex;
+  padding-top: 30%;
+  height: 300px;
+  width: 300px;
+  left: 80px;
+  position: relative;
+}
+.paralellogram {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  width: 300px;
+  height: 100%;
+  min-height: 260px;
+  background: #dc002e;
+  border-radius: 0 32px 32px 32px;
+  transform: skewX(-14deg);
+}
+.paralellogramTexts {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.paralelName {
+  font-family: "Fira Sans" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  color: #ffffff !important;
+}
+.paralelNumber {
+  font-family: "Fira Sans" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 28px !important;
+  line-height: 34px !important;
+  color: #ffffff !important;
+}
+@media only screen and (max-width: 1200px) {
+  .paralellogramWrap {
+    left: 50px;
+  }
+  .videoButtonWrap {
+    display: flex;
+    width: 100% !important;
+    min-width: 650px;
+  }
+  .playVideoButton {
+    top: 0px;
+    transition: 0.3s !important;
+    width: 100% !important;
+    height: 420px !important;
+  }
+  .sectionContainer {
+    height: 500px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .sectionContainer {
+    height: 450px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .videoButtonWrap {
+    display: flex;
+    width: 100% !important;
+    min-width: 500px;
+  }
+  .playVideoButton {
+    top: 0px;
+    transition: 0.3s !important;
+    width: 100% !important;
+    height: 420px !important;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .paralellogramWrap {
+    position: relative;
+    left: 10px;
+  }
+  .playVideoButton {
+    transition: 0.3s !important;
+    width: 100% !important;
+    height: 120px !important;
+  }
+  .videoButtonWrap {
+    display: flex;
+    width: 70% !important;
+    min-width: 300px;
+    margin-left: 150px;
+  }
+  .paralellogram {
+    width: 260px;
+  }
+  .imagesWrap {
+    display: flex;
+    width: 90%;
+    height: 550px;
+    margin: auto;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .playVideoButton {
+    transition: 0.3s !important;
+    width: 100% !important;
+    height: 120px !important;
+  }
+  .videoButtonWrap {
+    display: flex;
+    width: 81% !important;
+    min-width: 350px;
+    margin-top: 40px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .sectionContainer {
+    display: flex !important;
+    width: 100% !important;
+    height: 450px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+  .sectionBrandsContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 100px !important;
+    width: 100% !important;
+    height: 330px !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .sectionBrandsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 390px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
 }

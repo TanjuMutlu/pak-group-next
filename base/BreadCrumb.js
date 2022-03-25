@@ -1,5 +1,5 @@
 import { makeStyles } from "@mui/styles";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Box from "@mui/material/Box";
@@ -16,6 +16,8 @@ const useStyles = makeStyles({
 
 export default function BreadCrumb({ title, brand, sector }) {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:900px)");
+
   return (
     <>
       <Box
@@ -23,9 +25,9 @@ export default function BreadCrumb({ title, brand, sector }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: "100%",
+          width: matches ? "80%" : "90%",
           height: "45px",
-          margin: "auto",
+          margin: matches ? "auto" : "",
           background: "#DC002E",
           borderRadius: "0 0 58px 0",
         }}

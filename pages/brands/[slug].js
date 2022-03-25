@@ -1,4 +1,4 @@
-import { Typography, Box, Button } from "@mui/material";
+import { Typography, Box, Button, useMediaQuery } from "@mui/material";
 import axios from "axios";
 import SectorButtons from "base/SectorButtons";
 import HeroPages from "components/HeroPages";
@@ -9,6 +9,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const SimpleBrand = ({ brand }) => {
+  const matches = useMediaQuery("(min-width:900px)");
   return (
     <>
       <HeroPages
@@ -17,13 +18,18 @@ const SimpleBrand = ({ brand }) => {
         breadTitle={brand.title}
       />
       <Box className={styles.brandContentContainer}>
+        {matches ? null : (
+          <div className={styles.logo}>
+            <Image src={brand.logo} width={375} height={250} alt="logo" />
+          </div>
+        )}
         <Box className={styles.descriptionAndBody}>
           <Typography className={styles.description}>
             {brand.description}
           </Typography>
           <Box className={styles.bodyBox}>
             {brand.body.map((item, index) => (
-              <>
+              <div key={index}>
                 {index == 2 ? (
                   brand.bodyImg ? (
                     <Image
@@ -41,46 +47,86 @@ const SimpleBrand = ({ brand }) => {
                 {index % 2 == 1 ? (
                   <Typography className={styles.body}> {item} </Typography>
                 ) : null}
-              </>
+              </div>
             ))}
           </Box>
         </Box>
-        <Box className={styles.logoAndContacts}>
-          <div className={styles.logo}>
-            <Image src={brand.logo} width={375} height={250} alt="logo" />
-          </div>
-          <Box className={styles.contacts}>
-            <div className={styles.contactItem}>
-              <Typography className={styles.contactName}>
-                Web sitesi:
-              </Typography>
-              <Link href="https://www.pakmaya.com" passHref>
-                <Typography className={styles.contactLink}>
-                  {brand.webSitesi}
+        {matches ? null : (
+          <Box className={styles.logoAndContacts}>
+            <Box className={styles.contacts}>
+              <div className={styles.contactItem}>
+                <Typography className={styles.contactName}>
+                  Web sitesi:
                 </Typography>
-              </Link>
-            </div>
-            <div className={styles.contactItem}>
-              <Typography className={styles.contactName}>E-Posta:</Typography>
-              <Link href="https://www.pakmaya.com" passHref>
-                <Typography className={styles.contactLink}>
-                  {brand.ePosta}
-                </Typography>
-              </Link>
-            </div>
+                <Link href="https://www.pakmaya.com" passHref>
+                  <Typography className={styles.contactLink}>
+                    {brand.webSitesi}
+                  </Typography>
+                </Link>
+              </div>
+              <div className={styles.contactItem}>
+                <Typography className={styles.contactName}>E-Posta:</Typography>
+                <Link href="https://www.pakmaya.com" passHref>
+                  <Typography className={styles.contactLink}>
+                    {brand.ePosta}
+                  </Typography>
+                </Link>
+              </div>
+            </Box>
           </Box>
+        )}
+        {matches ? null : (
+          <Box className={styles.navButtons}>
+            <Button className={styles.buttonL} disableRipple>
+              <ArrowBackIosIcon color="primary" fontSize="s" />
+              Onceki marka
+            </Button>
+            <Button className={styles.buttonR} disableRipple>
+              Sonraki Marka
+              <ArrowForwardIosIcon color="primary" fontSize="s" />
+            </Button>
+          </Box>
+        )}
+        {matches ? (
+          <Box className={styles.logoAndContacts}>
+            <div className={styles.logo}>
+              <Image src={brand.logo} width={375} height={250} alt="logo" />
+            </div>
+            <Box className={styles.contacts}>
+              <div className={styles.contactItem}>
+                <Typography className={styles.contactName}>
+                  Web sitesi:
+                </Typography>
+                <Link href="https://www.pakmaya.com" passHref>
+                  <Typography className={styles.contactLink}>
+                    {brand.webSitesi}
+                  </Typography>
+                </Link>
+              </div>
+              <div className={styles.contactItem}>
+                <Typography className={styles.contactName}>E-Posta:</Typography>
+                <Link href="https://www.pakmaya.com" passHref>
+                  <Typography className={styles.contactLink}>
+                    {brand.ePosta}
+                  </Typography>
+                </Link>
+              </div>
+            </Box>
+          </Box>
+        ) : null}
+      </Box>
+      {matches ? (
+        <Box className={styles.navButtons}>
+          <Button className={styles.buttonL} disableRipple>
+            <ArrowBackIosIcon color="primary" fontSize="s" />
+            Onceki marka
+          </Button>
+          <Button className={styles.buttonR} disableRipple>
+            Sonraki Marka
+            <ArrowForwardIosIcon color="primary" fontSize="s" />
+          </Button>
         </Box>
-      </Box>
-      <Box className={styles.navButtons}>
-        <Button className={styles.buttonL} disableRipple>
-          <ArrowBackIosIcon fontSize="s" />
-          <Typography className={styles.buttonText}>Onceki marka</Typography>
-        </Button>
-        <Button className={styles.buttonR} disableRipple>
-          <Typography className={styles.buttonText}>Sonraki Marka</Typography>{" "}
-          <ArrowForwardIosIcon fontSize="s" />
-        </Button>
-      </Box>
+      ) : null}
       <div className={styles.sectorButtonsContainer}>
         <Typography className={styles.sectorButtonsTitle}>
           Faaliyet Gösterdiğimiz Sektörler

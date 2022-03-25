@@ -10,7 +10,6 @@
 .sectorButtons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 30px;
 }
@@ -24,6 +23,12 @@
   color: #000000 !important;
 }
 .sectorButtonsRedline {
+  width: 100px;
+  height: 6px;
+  background: #dc002e;
+  margin: 20px;
+}
+.titleRedline {
   width: 100px;
   height: 6px;
   background: #dc002e;
@@ -43,7 +48,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 90%;
   padding-bottom: 50px;
 }
 .bodyBox {
@@ -81,4 +86,48 @@
   margin: 20px 0 20px 30px;
   width: 70%;
   flex-direction: column;
+}
+.imgWrap {
+  position: relative;
+  margin: auto;
+  width: 240px;
+  height: 120px;
+}
+@media only screen and (max-width: 900px) {
+  .imgWrap {
+    position: relative;
+    margin: auto;
+    width: 240px;
+    height: 180px;
+  }
+  .companyCardTexts {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 90%;
+    flex-direction: column;
+  }
+  .bodyBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px;
+  }
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    margin-top: 50px;
+  }
+  .companyCard {
+    display: flex;
+    margin: 5px;
+    height: 350px;
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    background: #fff;
+  }
 }

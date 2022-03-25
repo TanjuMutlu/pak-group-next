@@ -8,6 +8,7 @@ export default function LayoutApp({ children }) {
         width: "100%",
         height: "100%",
         margin: "auto",
+        overflow: "hidden",
       }}
     >
       <Head>

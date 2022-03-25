@@ -12,6 +12,7 @@ import {
   ClickAwayListener,
 } from "@mui/material";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import LanguageIcon from "@mui/icons-material/Language";
 import styles from "styles/Includes.module.css";
 import gida from "public/sector/Gida-icon.svg";
 import ambalaj from "public/sector/Ambalaj-icon.svg";
@@ -27,7 +28,7 @@ import Image from "next/image";
 const DropdownItem = ({ title, iconHover, iconNoHover, link }) => {
   const [isHovering, setIsHovered] = useState("noHover");
   return (
-    <Link href={link} passHref={true}>
+    <Link href={link} passHref>
       <MenuItem
         className={styles.dropdownItem}
         style={{ background: "none" }}
@@ -48,7 +49,7 @@ const DropdownItem = ({ title, iconHover, iconNoHover, link }) => {
   );
 };
 
-export default function HeaderDropdown() {
+export default function HeaderDropdown({ title, arrowIcon = false }) {
   const [header, setHeader] = useState(false);
   const changeHeader = () => {
     if (window.scrollY > 80) {
@@ -99,14 +100,18 @@ export default function HeaderDropdown() {
         >
           <Typography
             color={header ? "common" : "secondary"}
-            className={styles.dropdownTitle}
+            variant="h4"
+            className={styles.dropdownHover}
           >
-            SEKTORLER
+            {title}
           </Typography>
-          <KeyboardArrowDownOutlinedIcon
-            color={header ? "common" : "secondary"}
-            className={styles.dropdownTitle}
-          />
+          {arrowIcon ? (
+            <KeyboardArrowDownOutlinedIcon
+              color={header ? "common" : "secondary"}
+            />
+          ) : (
+            <LanguageIcon color={header ? "common" : "secondary"} />
+          )}
         </Button>
         <Popper
           open={open}
@@ -131,15 +136,27 @@ export default function HeaderDropdown() {
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
                   >
-                    {menuItems.map((item, index) => (
-                      <DropdownItem
-                        title={item[2]}
-                        iconHover={item[0]}
-                        iconNoHover={item[1]}
-                        link={item[3]}
-                        key={index}
-                      />
-                    ))}
+                    {arrowIcon ? (
+                      menuItems.map((item, index) => (
+                        <div key={index}>
+                          <DropdownItem
+                            title={item[2]}
+                            iconHover={item[0]}
+                            iconNoHover={item[1]}
+                            link={item[3]}
+                          />
+                        </div>
+                      ))
+                    ) : (
+                      <MenuItem
+                        className={styles.dropdownItem}
+                        style={{ background: "none" }}
+                      >
+                        <Typography className={styles.dropdownText}>
+                          EN
+                        </Typography>
+                      </MenuItem>
+                    )}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

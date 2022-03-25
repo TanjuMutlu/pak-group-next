@@ -48,13 +48,63 @@
   max-width: 400px !important;
   font-family: Fira Sans !important ;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 400 !important;
   font-size: 16px !important;
   line-height: 22px !important;
 }
 .submitButton {
   border-radius: 0px 24px 24px 24px !important;
-  margin-top: 5px !important;
+  margin-top: 15px !important;
   width: 125px !important;
   height: 48px !important;
+}
+.formItem {
+  width: 42%;
+  margin: 10px;
+}
+@media only screen and (max-width: 650px) {
+  .formWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 30px 0 30px 0;
+    height: 90%;
+    width: 100%;
+  }
+  .formItem {
+    width: 95%;
+    margin: 10px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 0 100px 0;
+    height: 100%;
+    width: 100%;
+  }
+  .childContainer {
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+  }
+  .submitButton {
+    border-radius: 0px 24px 24px 24px !important;
+    margin: 15px 0 0 10px !important;
+    width: 125px !important;
+    height: 48px !important;
+  }
+  .title {
+    font-family: "Fira Sans" !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 24px !important;
+    line-height: 29px !important;
+    margin-bottom: 20px !important;
+    color: #000000 !important;
+  }
 }
